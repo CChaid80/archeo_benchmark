@@ -27,10 +27,9 @@ $env:CUBLAS_WORKSPACE_CONFIG=":4096:8"
 | Model family | Script |
 | --- | --- |
 | MobileNetV3-Small | `scripts/training/train_mobilenet_safe_seededV3.py` |
-| ResNet-18 imbalanced | `scripts/training/train_resnet18_desequilibre_paperready.py` |
-| ResNet-18 balanced | `scripts/training/train_resnet18_equilibre_paperready.py` |
+| ResNet-18 | `scripts/training/train_resnet18_desequilibre_paperready.py` |
 | QCNN standard | `scripts/training/train_qcnn_safe_seededV2.py` |
-| QCNN-VQE V2 | `scripts/training/train_qcnn_safe_seededV2_VQE.py` |
+| QCNN-VQE V2 standard | `scripts/training/train_qcnn_safe_seededV2_VQE_std.py` |
 | YOLOv8s / YOLOv11s / RT-DETR-L | `scripts/training/train_ultralytics_det_seeded_std.py` |
 
 ## Local source files used for this commit
@@ -39,9 +38,8 @@ $env:CUBLAS_WORKSPACE_CONFIG=":4096:8"
 | --- | --- |
 | `scripts/training/train_mobilenet_safe_seededV3.py` | `Models_Finaux/train_mobilenet_safe_seededV3.py` |
 | `scripts/training/train_resnet18_desequilibre_paperready.py` | `Models_Finaux/train_resnet18_desequilibre_paperready.py` |
-| `scripts/training/train_resnet18_equilibre_paperready.py` | `Models_Finaux/train_resnet18_equilibre_paperready.py` |
 | `scripts/training/train_qcnn_safe_seededV2.py` | `Models_Finaux/train_qcnn_safe_seededV2.py` |
-| `scripts/training/train_qcnn_safe_seededV2_VQE.py` | `congres_Inrap/Resultats_V2/train_qcnn_safe_seededV2_VQE.py` |
+| `scripts/training/train_qcnn_safe_seededV2_VQE_std.py` | `Models_Finaux/train_qcnn_safe_seededV2_VQE_std.py` |
 | `scripts/training/train_ultralytics_det_seeded_std.py` | `Models_Finaux/train_ultralytics_det_seeded_std.py` |
 
 ## Dataset YAML files
@@ -142,7 +140,7 @@ python scripts\training\train_resnet18_desequilibre_paperready.py ^
 ### Balanced dataset
 
 ```cmd
-python scripts\training\train_resnet18_equilibre_paperready.py ^
+python scripts\training\train_resnet18_desequilibre_paperready.py ^
   --train_dir "%PROJECT_ROOT%\crops_dataset_equilibre\train" ^
   --val_dir   "%PROJECT_ROOT%\crops_dataset_equilibre\val" ^
   --runs_root "%PROJECT_ROOT%\runs_paper" ^
@@ -184,22 +182,26 @@ python scripts\training\train_qcnn_safe_seededV2.py ^
 ### Imbalanced dataset
 
 ```cmd
-python scripts\training\train_qcnn_safe_seededV2_VQE.py ^
+python scripts\training\train_qcnn_safe_seededV2_VQE_std.py ^
   --train_dir "%PROJECT_ROOT%\runs\crops_desequilibre\train" ^
   --val_dir   "%PROJECT_ROOT%\runs\crops_desequilibre\val" ^
-  --outdir    "%PROJECT_ROOT%\runs_paper\cls_qcnn_vqe_v2" ^
-  --epochs 80 --batch_size 12 --img_size 448 --seed 42 --device cuda ^
+  --runs_root "%PROJECT_ROOT%\runs_paper" ^
+  --dataset_id "arkeocera" --scenario "imbalanced" --split_id "splitA" ^
+  --epochs 80 --batch_size 12 --img_size 448 ^
+  --seed 42 --device cuda ^
   --n_qubits 6 --n_layers 2 --class_weights none
 ```
 
 ### Balanced dataset
 
 ```cmd
-python scripts\training\train_qcnn_safe_seededV2_VQE.py ^
+python scripts\training\train_qcnn_safe_seededV2_VQE_std.py ^
   --train_dir "%PROJECT_ROOT%\crops_dataset_equilibre\train" ^
   --val_dir   "%PROJECT_ROOT%\crops_dataset_equilibre\val" ^
-  --outdir    "%PROJECT_ROOT%\runs_paper\cls_qcnn_vqe_v2" ^
-  --epochs 80 --batch_size 12 --img_size 448 --seed 42 --device cuda ^
+  --runs_root "%PROJECT_ROOT%\runs_paper" ^
+  --dataset_id "arkeocera" --scenario "balanced" --split_id "splitA" ^
+  --epochs 80 --batch_size 12 --img_size 448 ^
+  --seed 42 --device cuda ^
   --n_qubits 6 --n_layers 2 --class_weights none
 ```
 
