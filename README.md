@@ -69,6 +69,7 @@ See `dataset/README.md` for details.
 - `requirements.txt`: reference CUDA-oriented Python environment.
 - `requirements-cpu.txt`: CPU-oriented Python environment.
 - `configs/datasets/`: dataset YAML configuration files.
+- `scripts/data_preparation/`: crop checking, crop generation, and dataset preparation scripts.
 - `scripts/training/`: training scripts for classification and detection experiments.
 - `scripts/inference/`: inference and fusion demo scripts.
 - `doc/`: figures and tables associated with the submission.
