@@ -13,7 +13,6 @@ stored in this repository.
 | ResNet-18 balanced | `scripts/training/train_resnet18_equilibre_paperready.py` |
 | QCNN standard | `scripts/training/train_qcnn_safe_seededV2.py` |
 | QCNN-VQE V2 | `scripts/training/train_qcnn_safe_seededV2_VQE.py` |
-| QCNN-VQE V3b-style | `scripts/training/train_qcnn_safe_seededV3_VQEb.py` |
 | YOLOv8s / YOLOv11s / RT-DETR-L | `scripts/training/train_ultralytics_det_seeded_std.py` |
 
 ## Local source files used for this commit
@@ -25,7 +24,6 @@ stored in this repository.
 | `scripts/training/train_resnet18_equilibre_paperready.py` | `Models_Finaux/train_resnet18_equilibre_paperready.py` |
 | `scripts/training/train_qcnn_safe_seededV2.py` | `Models_Finaux/train_qcnn_safe_seededV2.py` |
 | `scripts/training/train_qcnn_safe_seededV2_VQE.py` | `congres_Inrap/Resultats_V2/train_qcnn_safe_seededV2_VQE.py` |
-| `scripts/training/train_qcnn_safe_seededV3_VQEb.py` | `congres_Inrap/Resultats_V3/train_qcnn_safe_seededV3_VQEb.py` |
 | `scripts/training/train_ultralytics_det_seeded_std.py` | `Models_Finaux/train_ultralytics_det_seeded_std.py` |
 
 ## Dataset YAML files
@@ -186,32 +184,7 @@ python scripts\training\train_qcnn_safe_seededV2_VQE.py ^
   --n_qubits 6 --n_layers 2 --class_weights none
 ```
 
-## 5. QCNN-VQE V3b-style
-
-Note: this script uses `--out_dir` and `--batch`, not `--outdir` and
-`--batch_size`.
-
-### Imbalanced dataset
-
-```cmd
-python scripts\training\train_qcnn_safe_seededV3_VQEb.py ^
-  --train_dir "%PROJECT_ROOT%\runs\crops_desequilibre\train" ^
-  --val_dir   "%PROJECT_ROOT%\runs\crops_desequilibre\val" ^
-  --out_dir   "%PROJECT_ROOT%\runs_paper\cls_qcnn_vqe_v3" ^
-  --epochs 80 --batch 12 --img_size 448 --seed 42 --device cuda
-```
-
-### Balanced dataset
-
-```cmd
-python scripts\training\train_qcnn_safe_seededV3_VQEb.py ^
-  --train_dir "%PROJECT_ROOT%\crops_dataset_equilibre\train" ^
-  --val_dir   "%PROJECT_ROOT%\crops_dataset_equilibre\val" ^
-  --out_dir   "%PROJECT_ROOT%\runs_paper\cls_qcnn_vqe_v3" ^
-  --epochs 80 --batch 12 --img_size 448 --seed 42 --device cuda
-```
-
-## 6. Detection on full images
+## 5. Detection on full images
 
 The detection experiments use one generic Ultralytics script launched for
 three model families and two dataset scenarios.
