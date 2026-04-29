@@ -4,6 +4,24 @@ This repository includes the training scripts used for the archaeological
 ceramic sherd benchmark. Datasets, trained weights and run outputs are not
 stored in this repository.
 
+## Important before training
+
+Before launching any training script, set `CUBLAS_WORKSPACE_CONFIG` in the
+same terminal session. This is required for deterministic CUDA execution when
+the scripts enable deterministic PyTorch algorithms.
+
+For `cmd.exe`:
+
+```cmd
+set CUBLAS_WORKSPACE_CONFIG=:4096:8
+```
+
+For PowerShell:
+
+```powershell
+$env:CUBLAS_WORKSPACE_CONFIG=":4096:8"
+```
+
 ## Scripts included
 
 | Model family | Script |
@@ -63,7 +81,8 @@ pip install -r requirements.txt
 
 ## Reproducibility setup
 
-Before launching the scripts in `cmd.exe`:
+Before launching the scripts in `cmd.exe`, set the reproducibility variable and
+the project root:
 
 ```cmd
 set CUBLAS_WORKSPACE_CONFIG=:4096:8
