@@ -1,0 +1,105 @@
+# ============================================================
+# Archaeological ceramic sherd benchmark
+# Deep learning + hybrid quantum-classical models
+#
+# Models covered:
+# - ResNet-18
+# - MobileNetV3-Small
+# - QCNN
+# - QCNN-VQE
+# - YOLOv8-s
+# - YOLOv11-s
+# - RT-DETR-L
+#
+# Reference environment used in the experiments:
+# - Python >= 3.10
+# - PyTorch 2.5.1 + CUDA 12.1
+# - Ultralytics 8.3.225
+# - PennyLane 0.43.0
+# ============================================================
+
+
+# ------------------------------------------------------------
+# Core scientific stack
+# ------------------------------------------------------------
+numpy==1.26.4
+scipy==1.13.1
+pandas==2.2.3
+scikit-learn==1.5.2
+tqdm==4.67.1
+matplotlib==3.9.2
+seaborn==0.13.2
+Pillow==10.4.0
+opencv-python==4.10.0.84
+PyYAML==6.0.2
+
+
+# ------------------------------------------------------------
+# PyTorch stack
+#
+# IMPORTANT:
+# For CUDA 12.1, install PyTorch with:
+#
+# pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 \
+#   --index-url https://download.pytorch.org/whl/cu121
+#
+# The three lines below are kept for environments where pip can
+# resolve the proper wheel automatically. If CUDA installation fails,
+# use the command above before installing the rest of the requirements.
+# ------------------------------------------------------------
+torch==2.5.1
+torchvision==0.20.1
+torchaudio==2.5.1
+
+
+# ------------------------------------------------------------
+# Object detection
+#
+# Ultralytics covers:
+# - YOLOv8-s
+# - YOLOv11-s
+# - RT-DETR-L through the Ultralytics interface
+# ------------------------------------------------------------
+ultralytics==8.3.225
+pycocotools==2.0.8
+
+
+# ------------------------------------------------------------
+# Hybrid quantum-classical models
+#
+# Required for:
+# - QCNN
+# - QCNN-VQE
+# ------------------------------------------------------------
+pennylane==0.43.0
+pennylane-lightning==0.43.0
+autoray==0.7.2
+
+
+# ------------------------------------------------------------
+# Image annotation and dataset conversion utilities
+#
+# Useful for:
+# - LabelMe JSON parsing
+# - conversion to COCO / YOLO formats
+# - dataset inspection
+# ------------------------------------------------------------
+labelme==5.5.0
+jsonschema==4.23.0
+lxml==5.3.0
+
+
+# ------------------------------------------------------------
+# Experiment tracking, reports and reproducibility helpers
+# ------------------------------------------------------------
+tensorboard==2.18.0
+openpyxl==3.1.5
+joblib==1.4.2
+psutil==6.1.0
+
+
+# ------------------------------------------------------------
+# Optional notebook support
+# ------------------------------------------------------------
+jupyter==1.1.1
+ipykernel==6.29.5
