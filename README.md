@@ -51,8 +51,20 @@ The dataset corresponds to a corpus of **Gallo-Roman ceramics mainly from Amiens
 
 ---
 
+# Dataset access
+
+The dataset is not distributed directly in this repository. Access is limited
+to research projects and requires a request by email to the contact address
+listed above. Requests should explain the scientific context and intended use
+of the dataset.
+
+See `dataset/README.md` for details.
+
+---
+
 # Repository structure
 
+- `dataset/`: dataset access information.
 - `TRAINING.md`: training commands and reproducibility notes.
 - `requirements.txt`: reference CUDA-oriented Python environment.
 - `requirements-cpu.txt`: CPU-oriented Python environment.
