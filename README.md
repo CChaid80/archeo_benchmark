@@ -49,6 +49,8 @@ The benchmark includes:
 
 The dataset corresponds to a corpus of **Gallo-Roman ceramics mainly from Amiens (France)**.
 
+For the full metric definition and detector matching procedure, see [`EVALUATION_PROTOCOL.md`](EVALUATION_PROTOCOL.md).
+
 ---
 
 # Dataset access
@@ -65,6 +67,7 @@ See `dataset/README.md` for details.
 # Repository structure
 
 - `dataset/`: dataset access information.
+- `EVALUATION_PROTOCOL.md`: metric definition and detector matching protocol.
 - `TRAINING.md`: training commands and reproducibility notes.
 - `requirements.txt`: reference CUDA-oriented Python environment.
 - `requirements-cpu.txt`: CPU-oriented Python environment.

@@ -275,3 +275,5 @@ python scripts\training\train_ultralytics_det_seeded_std.py ^
   --dataset_id "arkeocera" --scenario "balanced" --split_id "splitA" ^
   --model_id "rtdetr-l" --epochs 80 --batch 12 --imgsz 448 --seed 42
 ```
+
+All detection results should be evaluated using the unified protocol described in [`EVALUATION_PROTOCOL.md`](EVALUATION_PROTOCOL.md).
