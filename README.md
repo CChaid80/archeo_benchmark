@@ -70,6 +70,7 @@ See `dataset/README.md` for details.
 - `requirements-cpu.txt`: CPU-oriented Python environment.
 - `configs/datasets/`: dataset YAML configuration files.
 - `scripts/data_preparation/`: crop checking, crop generation, and dataset preparation scripts.
+- `scripts/evaluation/`: ground-truth export, prediction export, metric computation, and plotting scripts.
 - `scripts/training/`: training scripts for classification and detection experiments.
 - `scripts/inference/`: inference and fusion demo scripts.
 - `doc/`: figures and tables associated with the submission.
