@@ -35,7 +35,7 @@ The benchmark includes:
 - Hybrid CNN / PQC models (QCNN, QCNN-VQE)
 - Object detectors (YOLOv8-s, YOLOv11-s, RT-DETR-L)
 
-The dataset corresponds to a corpus of **Gallo-Roman ceramics from Amiens (France)**.
+The dataset corresponds to a corpus of **Gallo-Roman ceramics mainly from Amiens (France)**.
 
 ---
 
