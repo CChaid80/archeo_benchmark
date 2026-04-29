@@ -1,0 +1,10 @@
+# ARKEOCERA - detection dataset (balanced)
+path: C:/ARKEOCERA/arkeocera/IA_ARKEO/ceramique/dataset/dataset_equilibre
+train: images/train
+val: images/val
+
+# 0=sigillee, 1=CO, 2=CR
+names:
+  0: sigillee
+  1: CO
+  2: CR

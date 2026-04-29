@@ -28,6 +28,13 @@ stored in this repository.
 | `scripts/training/train_qcnn_safe_seededV3_VQEb.py` | `congres_Inrap/Resultats_V3/train_qcnn_safe_seededV3_VQEb.py` |
 | `scripts/training/train_ultralytics_det_seeded_std.py` | `Models_Finaux/train_ultralytics_det_seeded_std.py` |
 
+## Dataset YAML files
+
+| Scenario | Repository file | Local source |
+| --- | --- | --- |
+| Imbalanced detection dataset | `configs/datasets/arkeocera_imbalanced.yaml` | `Models_Finaux/data_imbalanced.yaml` |
+| Balanced detection dataset | `configs/datasets/arkeocera_balanced.yaml` | `Models_Finaux/data_balanced.yaml` |
+
 ## Environment
 
 Reference environment:
@@ -214,7 +221,7 @@ three model families and two dataset scenarios.
 ```cmd
 python scripts\training\train_ultralytics_det_seeded_std.py ^
   --model_path "%PROJECT_ROOT%\congres_Inrap\yolov8s.pt" ^
-  --data_yaml  "%PROJECT_ROOT%\dataset\dataset\data.yaml" ^
+  --data_yaml  "configs\datasets\arkeocera_imbalanced.yaml" ^
   --runs_root  "%PROJECT_ROOT%\runs_paper" ^
   --dataset_id "arkeocera" --scenario "imbalanced" --split_id "splitA" ^
   --model_id "yolov8s" --epochs 80 --batch 12 --imgsz 448 --seed 42
@@ -225,7 +232,7 @@ python scripts\training\train_ultralytics_det_seeded_std.py ^
 ```cmd
 python scripts\training\train_ultralytics_det_seeded_std.py ^
   --model_path "%PROJECT_ROOT%\congres_Inrap\yolov8s.pt" ^
-  --data_yaml  "%PROJECT_ROOT%\dataset\dataset_equilibre\data.yaml" ^
+  --data_yaml  "configs\datasets\arkeocera_balanced.yaml" ^
   --runs_root  "%PROJECT_ROOT%\runs_paper" ^
   --dataset_id "arkeocera" --scenario "balanced" --split_id "splitA" ^
   --model_id "yolov8s" --epochs 80 --batch 12 --imgsz 448 --seed 42
@@ -236,7 +243,7 @@ python scripts\training\train_ultralytics_det_seeded_std.py ^
 ```cmd
 python scripts\training\train_ultralytics_det_seeded_std.py ^
   --model_path "%PROJECT_ROOT%\congres_Inrap\yolo11s.pt" ^
-  --data_yaml  "%PROJECT_ROOT%\dataset\dataset\data.yaml" ^
+  --data_yaml  "configs\datasets\arkeocera_imbalanced.yaml" ^
   --runs_root  "%PROJECT_ROOT%\runs_paper" ^
   --dataset_id "arkeocera" --scenario "imbalanced" --split_id "splitA" ^
   --model_id "yolo11s" --epochs 80 --batch 12 --imgsz 448 --seed 42
@@ -247,7 +254,7 @@ python scripts\training\train_ultralytics_det_seeded_std.py ^
 ```cmd
 python scripts\training\train_ultralytics_det_seeded_std.py ^
   --model_path "%PROJECT_ROOT%\congres_Inrap\yolo11s.pt" ^
-  --data_yaml  "%PROJECT_ROOT%\dataset\dataset_equilibre\data.yaml" ^
+  --data_yaml  "configs\datasets\arkeocera_balanced.yaml" ^
   --runs_root  "%PROJECT_ROOT%\runs_paper" ^
   --dataset_id "arkeocera" --scenario "balanced" --split_id "splitA" ^
   --model_id "yolo11s" --epochs 80 --batch 12 --imgsz 448 --seed 42
@@ -258,7 +265,7 @@ python scripts\training\train_ultralytics_det_seeded_std.py ^
 ```cmd
 python scripts\training\train_ultralytics_det_seeded_std.py ^
   --model_path "%PROJECT_ROOT%\congres_Inrap\rtdetr-l.pt" ^
-  --data_yaml  "%PROJECT_ROOT%\dataset\dataset\data.yaml" ^
+  --data_yaml  "configs\datasets\arkeocera_imbalanced.yaml" ^
   --runs_root  "%PROJECT_ROOT%\runs_paper" ^
   --dataset_id "arkeocera" --scenario "imbalanced" --split_id "splitA" ^
   --model_id "rtdetr-l" --epochs 80 --batch 12 --imgsz 448 --seed 42
@@ -269,7 +276,7 @@ python scripts\training\train_ultralytics_det_seeded_std.py ^
 ```cmd
 python scripts\training\train_ultralytics_det_seeded_std.py ^
   --model_path "%PROJECT_ROOT%\congres_Inrap\rtdetr-l.pt" ^
-  --data_yaml  "%PROJECT_ROOT%\dataset\dataset_equilibre\data.yaml" ^
+  --data_yaml  "configs\datasets\arkeocera_balanced.yaml" ^
   --runs_root  "%PROJECT_ROOT%\runs_paper" ^
   --dataset_id "arkeocera" --scenario "balanced" --split_id "splitA" ^
   --model_id "rtdetr-l" --epochs 80 --batch 12 --imgsz 448 --seed 42
