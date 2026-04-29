@@ -4,7 +4,14 @@ Benchmark of classical and hybrid quantum-classical models for the visual classi
 
 This repository accompanies the article:
 
-**"Benchmarking deep and hybrid quantum–classical models for Gallo-Roman ceramic classification"**
+**"Benchmarking deep and hybrid quantum-classical models for Gallo-Roman ceramic sherd classification: a reproducible evaluation framework"**
+
+Cyrille Chaidron1*, Hafsa Taiebi Imrani2
+
+¹ UMR 7041 ArScAn & U.R. 4284 TrAme, University of Picardie Jules Verne, Amiens, France  
+² Faculty of Science, Ibn Tofail University, Kenitra, Morocco  
+*Corresponding author: Cyrille Chaidron  
+Email: cyrille@arteka.tech
 
 It provides the scripts used to reproduce the evaluation protocol, including classification, object detection, and hybrid CNN/PQC experiments.
 
