@@ -58,4 +58,5 @@ The dataset corresponds to a corpus of **Gallo-Roman ceramics mainly from Amiens
 - `requirements-cpu.txt`: CPU-oriented Python environment.
 - `configs/datasets/`: dataset YAML configuration files.
 - `scripts/training/`: training scripts for classification and detection experiments.
+- `scripts/inference/`: inference and fusion demo scripts.
 - `doc/`: figures and tables associated with the submission.
